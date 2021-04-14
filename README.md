@@ -19,6 +19,8 @@ Formulario:
     "tea":"90.9%",
     "diaPago":"20"
 }
+...
+
 
 ```
 Respuesta exitosa:
@@ -105,7 +107,6 @@ _Ingresar a POSTMAN y en el Workspaces ingresar los siguientes endpoints:_
 http://localhost:9090/api/tarjetas/v2
 
 respuesta: la lista de los nombres y tea de las tarjetas de la tabla: tarjeta
-
 ```
 
 ```
