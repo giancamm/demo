@@ -5,7 +5,7 @@ _Simulador de compras que permita a un usuario BCP saber las cuotas mensuales qu
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán realizar la prueba: para esto se deberá solicitar al usuario su tipo de tarjeta, monto de compra, cuotas a financiar, tasa de interés, fecha de compra y día de pago_
+_Estas instrucciones permitirán realizar la prueba: para esto se deberá solicitar al usuario su tipo de tarjeta, monto de compra, cuotas a financiar, tasa de interés, fecha de compra y día de pago_
 
 ```
 Formulario:
