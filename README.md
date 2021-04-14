@@ -19,7 +19,7 @@ Formulario:
     "tea":"90.9%",
     "diaPago":"20"
 }
-...
+```
 
 
 ```
