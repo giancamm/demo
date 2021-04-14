@@ -5,7 +5,7 @@ _Simulador de compras que permita a un usuario BCP saber las cuotas mensuales de
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán pruebar: se deberá solicitar al usuario su tipo de tarjeta, monto de compra, cuotas a financiar, tasa de interés, fecha de compra y día de pago_
+_Estas instrucciones te permitirán realizar la prueba: se deberá solicitar al usuario su tipo de tarjeta, monto de compra, cuotas a financiar, tasa de interés, fecha de compra y día de pago_
 
 ```
 Formulario:
@@ -20,7 +20,6 @@ Formulario:
     "diaPago":"20"
 }
 ```
-
 
 ```
 Respuesta exitosa:
@@ -112,7 +111,7 @@ respuesta: la lista de los nombres y tea de las tarjetas de la tabla: tarjeta
 ```
 http://localhost:9090/api/cuotas/calcular
 
-respuesta: debera mostrar respuesta eitosa o respuesta fallida detallada en el punto ## Comenzando 
+respuesta: debera mostrar respuesta exitosa o respuesta fallida detallada en el punto ## Comenzando 
 ```
 
 
