@@ -1,105 +1,123 @@
-# Título del Proyecto
+# Simulador de Cuotas
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_Simulador de compras que permita a un usuario BCP saber las cuotas mensuales de que deberá aportar luego de realizar una compra con su tarjeta BCP_
+
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Estas instrucciones te permitirán pruebar: se deberá solicitar al usuario su tipo de tarjeta, monto de compra, cuotas a financiar, tasa de interés, fecha de compra y día de pago_
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+```
+Formulario:
+
+{
+    "dni": "99991111",
+    "tarjeta":"BLACK",
+    "moneda":"S/",
+    "monto": "1000", 
+    "cuota": "6", 
+    "tea":"90.9%",
+    "diaPago":"20"
+}
+
+```
+Respuesta exitosa:
+
+{
+    "cuota": "200.41",
+    "moneda": "S/",
+    "primeraCuota": "20/05/2021",
+    "estado": "exitoso"
+}
+```
+
+```
+Respuesta fallida:
+
+{
+    "estado": "fallido",
+    "mensaje": "DNI no disponible"
+}
+```
+
+```
+Datos de Tareta:
+- Clasica
+- Oro
+- Black
+```
+
+```
+Cuotas:
+de 1 a 36
+```
+
+```
+Dias de pago:
+5 o 20
+```
+
+```
+TEA:
+99.90%
+95.90%
+90.90%
+```
 
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Crear en MySQL la Base de Datos: **simuladordb** utilizar la clave que desee y actualizarlo en el archivo: **application.properties**_
+_Crear las siguientes tablas para poder probar el proyecto:_
 
 ```
-Da un ejemplo
+CREATE TABLE `tarjeta` (
+  `id` int NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `tasa` double NOT NULL,
+  `tem` double NOT NULL,
+  PRIMARY KEY (`id`)
 ```
 
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
 ```
-Da un ejemplo
+CREATE TABLE `clitarj` (
+  `dniCliente` varchar(8) NOT NULL,
+  `idTarjeta` bigint NOT NULL,
+  PRIMARY KEY (`dniCliente`,`idTarjeta`)
 ```
 
-_Y repite_
-
 ```
-hasta finalizar
+CREATE TABLE `cliente` (
+  `DniCliente` int NOT NULL,
+  `NombreCliente` varchar(45) NOT NULL,
+  `ApellidoPatCliente` varchar(45) NOT NULL,
+  `ApellidoMatCliente` varchar(45) NOT NULL,
+  `EmailCliente` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`DniCliente`)
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
 ## Ejecutando las pruebas ⚙️
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
+_Ingresar a POSTMAN y en el Workspaces ingresar los siguientes endpoints:_
 
 ```
-Da un ejemplo
-```
+http://localhost:9090/api/tarjetas/v2
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
+respuesta: la lista de los nombres y tea de las tarjetas de la tabla: tarjeta
 
 ```
-Da un ejemplo
+
+```
+http://localhost:9090/api/cuotas/calcular
+
+respuesta: debera mostrar respuesta eitosa o respuesta fallida detallada en el punto ## Comenzando 
 ```
 
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Intellij IDEA](https://www.jetbrains.com/es-es/idea/) - IDE para JVM eficaz y ergonomico
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [Postman](https://www.postman.com/) - Plataforma de colaboracion para el desarrollo de API
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
-
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
