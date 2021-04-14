@@ -111,7 +111,7 @@ respuesta: la lista de los nombres y tea de las tarjetas de la tabla: tarjeta
 ```
 http://localhost:9090/api/cuotas/calcular
 
-respuesta: debera mostrar respuesta exitosa o respuesta fallida detallada en el punto **Comenzando** 
+respuesta: debera mostrar respuesta exitosa o respuesta fallida detallada en el punto Comenzando 
 ```
 
 
