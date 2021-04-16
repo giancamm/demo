@@ -114,6 +114,10 @@ http://localhost:9090/api/cuotas/calcular
 respuesta: debera mostrar respuesta exitosa o respuesta fallida detallada en el punto Comenzando 
 ```
 
+```
+Nota: Se incluyeron validaciones de tipo de tarjeta y monto de tea.
+```
+
 
 ## Construido con 🛠️
 
